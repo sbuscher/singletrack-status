@@ -1,19 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header></Header>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/layout/Header";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Header,
+  },
+  data() {
+    return {
+      status: {
+        tranquility: {
+          status: "open",
+          comment: "have at it",
+          user: "Russ",
+          date: null,
+        },
+        swanson: {
+          status: "closed",
+          comment: "too muddy",
+          user: "Russ",
+          date: null,
+        },
+        platte: {
+          status: "open",
+          comment: "no rain here",
+          user: "Paul",
+          date: null,
+        },
+      },
+    };
+  },
+};
 </script>
 
 <style>
@@ -23,6 +46,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
